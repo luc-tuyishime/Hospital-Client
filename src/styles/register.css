@@ -3,3 +3,14 @@
     width: 500px;
     margin: auto;
 }
+
+.form-container-inline {
+    padding-top: 40px;
+    width: 600px;
+    margin: auto;
+}
+
+.text-create-user {
+    float: right;
+    padding-top: 7px
+}

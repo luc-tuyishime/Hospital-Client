@@ -1,4 +1,4 @@
-import CreateUser from '../pages/CreateUser';
+import CreateUser from '../pages/create/CreateUser';
 
 export default {
     exact: true,

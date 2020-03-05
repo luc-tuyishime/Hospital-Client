@@ -12,6 +12,7 @@ function App() {
             key={route.name}
             exact
             path={route.path}
+            protected={route.protected}
             render={
               props => {
                 document.title = route.name

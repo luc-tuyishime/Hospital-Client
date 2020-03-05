@@ -1,4 +1,4 @@
-import RegisterHospital from '../pages/CreateHospital';
+import RegisterHospital from '../pages/create/CreateHospital';
 
 export default {
     exact: true,

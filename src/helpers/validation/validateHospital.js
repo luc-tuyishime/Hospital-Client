@@ -1,10 +1,12 @@
 import Joi from 'joi-browser';
 import newHospital from './schemas/newHospital';
+import newUser from './schemas/newUser';
 
 export default (inputs, schema) => {
     const errors = {};
     const validateSchemas = {
-        newHospital
+        newHospital,
+        newUser
     };
     const { error } = Joi.validate(inputs, validateSchemas[schema], { abortEarly: false });
 

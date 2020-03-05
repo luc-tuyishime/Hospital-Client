@@ -13,8 +13,12 @@ export default (state, { type, payload }) => {
                 signup: { ...state.signup, loading: false }
             };
         case hospitalActionsTypes.SIGNUP_HOSPITAL_SUCCESS:
+            localStorage.hospital = JSON.stringify(payload.hospital);
+            localStorage.token = payload.token;
             return {
                 ...state,
+                isAuth: true,
+                token: payload.token,
                 profile: payload.hospital,
                 signup: { loading: false, message: payload.message, errors: {} }
             };
