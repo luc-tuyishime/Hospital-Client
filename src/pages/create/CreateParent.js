@@ -35,7 +35,6 @@ class CreateParent extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log('here are the =>', this.props);
         const { create, isAuth } = this.props;
         const { errors, form } = this.state;
         const { ...formData } = form;
@@ -49,12 +48,9 @@ class CreateParent extends Component {
     };
 
     UNSAFE_componentWillReceiveProps = (nextProps) => {
-        console.log('next props here', nextProps);
         const { errors } = this.state;
         this.setState({
             message: nextProps.message,
-            // notAdmin: nextProps.errors,
-            // role: nextProps.profile.role,
             errors: { ...errors, ...nextProps.errors }
         });
 
@@ -81,9 +77,9 @@ class CreateParent extends Component {
                             </Message>
 
                         )}
-                    {(message || errors.message) ? (
-                        <Message color={(message && 'green') || (errors.message && 'red')}>
-                            {message || errors.message}
+                    {(message || errors.message || errors.token) ? (
+                        <Message color={(message && 'green') || (errors.message && 'red') || (errors.token && 'red')}>
+                            {message || errors.message || errors.token}
                         </Message>
                     ) : ''}
                     <Form onSubmit={this.handleSubmit}>

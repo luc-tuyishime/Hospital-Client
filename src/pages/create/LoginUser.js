@@ -45,7 +45,6 @@ class LoginUser extends Component {
 
     handeleSubmit = (e) => {
         e.preventDefault();
-        console.log('this.props', this.props);
         const { form, errors } = this.state;
         const { login } = this.props;
         const { ...formData } = form;

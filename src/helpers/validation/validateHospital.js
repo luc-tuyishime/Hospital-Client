@@ -4,6 +4,7 @@ import newUser from './schemas/newUser';
 import loginUser from './schemas/loginUser';
 import newParent from './schemas/newParent';
 import newChild from './schemas/newChild';
+import newVaccin from './schemas/newVaccin';
 
 export default (inputs, schema) => {
     const errors = {};
@@ -12,7 +13,8 @@ export default (inputs, schema) => {
         newUser,
         loginUser,
         newParent,
-        newChild
+        newChild,
+        newVaccin
     };
     const { error } = Joi.validate(inputs, validateSchemas[schema], { abortEarly: false });
 
@@ -21,7 +23,6 @@ export default (inputs, schema) => {
             errors[err.path[0]] = err.message.replace(/"/g, '');
         });
     }
-
 
     return errors;
 };

@@ -47,7 +47,6 @@ class CreateUser extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log('here are the =>', this.props);
         const { createUser } = this.props;
         const { errors, form } = this.state;
         const { confirmPassword, ...formData } = form;

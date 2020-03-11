@@ -29,14 +29,13 @@ class CreateChild extends Component {
             sex: '',
             parentId: ''
         },
-        errors: {},
+        errors: '',
         loading: false,
         message: ''
     };
 
     handleChange = (_, data) => {
         const { form, errors } = this.state;
-        console.log('data :', data);
         this.setState({
             form: { ...form, [data.name]: data.value },
             errors: { ...errors, [data.name]: null },
@@ -47,7 +46,6 @@ class CreateChild extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log('here are the =>', this.props);
         const { create, isAuth } = this.props;
         const { errors, form } = this.state;
         const { ...formData } = form;
@@ -61,22 +59,18 @@ class CreateChild extends Component {
     };
 
     UNSAFE_componentWillReceiveProps = (nextProps) => {
-        const { message } = this.state;
         const alertMessage = (nextProps.message && toast.success(nextProps.message))
             || (nextProps.errors && toast.error(nextProps.errors));
         this.setState({
-            message: { ...message, ...nextProps.message }
+            errors: nextProps.errors,
+            message: nextProps.message
         })
         return !nextProps.loading && alertMessage;
     };
 
     render() {
-        // const alert = this.props.useAlert();
         const { loading, isAuth, profile } = this.props;
         const { form, message, errors } = this.state;
-        console.log('uuuuu', errors);
-        const value = message;
-        console.log('please ici ==>', value && value);
         return (
             <>
                 <MenuBar2 />
@@ -150,6 +144,10 @@ class CreateChild extends Component {
                                     Create
                         </Button>
                             )}
+                        {message.includes('Child created and associated to parent..') &&
+                            <div className="text-create-user">
+                                <Link to='/create-vaccines'> Create Vaccin</Link>
+                            </div>}
                     </Form>
                 </div>
             </>
