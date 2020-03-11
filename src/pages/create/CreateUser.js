@@ -3,6 +3,7 @@ import { Form, Button } from "semantic-ui-react";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Message } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 import { create } from '../../actions/user';
 import MenuBar from '../../components/MenuBar';
@@ -37,7 +38,6 @@ class CreateUser extends Component {
             loading: false,
             message: ''
         });
-        console.log(form);
     };
 
     UNSAFE_componentWillMount() {
@@ -47,6 +47,7 @@ class CreateUser extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        console.log('here are the =>', this.props);
         const { createUser } = this.props;
         const { errors, form } = this.state;
         const { confirmPassword, ...formData } = form;
@@ -73,6 +74,7 @@ class CreateUser extends Component {
     render() {
         const { loading, isAuth } = this.props;
         const { form, message, errors } = this.state;
+        console.log('message', message);
         return (
             <>
                 <MenuBar />
@@ -162,6 +164,10 @@ class CreateUser extends Component {
                             <Message info>
                                 <p>You are not logged in</p>
                             </Message>}
+                        {message.includes('user created please Login...') &&
+                            <div className="text-create-user">
+                                <Link to='/login-user'> Login user</Link>
+                            </div>}
                     </Form>
 
                 </div>
@@ -173,7 +179,6 @@ class CreateUser extends Component {
 CreateUser.propTypes = {
     loading: PropTypes.bool,
     isAuth: PropTypes.bool,
-    profile: PropTypes.object,
     listOfUsers: PropTypes.array,
     message: PropTypes.string,
     errors: PropTypes.object,
@@ -182,10 +187,9 @@ CreateUser.propTypes = {
 };
 
 const mapStateToProps = ({
-    hospital: { isAuth, profile },
+    hospital: { isAuth },
     user: { createUser: { listOfUsers, loading, message, errors } } }) => ({
         isAuth,
-        profile,
         listOfUsers,
         loading,
         message,

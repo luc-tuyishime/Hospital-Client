@@ -7,8 +7,9 @@ const { reactUrl, defaultUrl } = urlHelper.backend;
 
 export default (data = {}) => {
     const { token, URL } = data;
+    console.log('token==>', data);
     const baseURL = URL || (reactUrl && `${reactUrl}/api/v1`) || (defaultUrl && `${defaultUrl}/api/v1`);
     const headers = { 'access-token': token || localStorage.token || undefined };
 
-    return (NODE_ENV === 'test' && axios) || axios.create({ baseURL, headers });
+    return (NODE_ENV === 'test' && axios) || axios.create({ baseURL, headers, });
 };

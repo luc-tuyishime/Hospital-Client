@@ -14,3 +14,7 @@
     float: right;
     padding-top: 7px
 }
+
+.container {
+    display: inline;
+}
