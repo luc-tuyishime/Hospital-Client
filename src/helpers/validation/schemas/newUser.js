@@ -2,17 +2,17 @@ import Joi from 'joi-browser';
 
 export default Joi.object().keys({
     firstName: Joi.string()
-        .min(3)
+        .min(5)
         .max(45)
         .required()
         .label('firstName'),
     lastName: Joi.string()
-        .min(3)
+        .min(5)
         .max(45)
         .required()
         .label('lastName'),
     username: Joi.string()
-        .min(3)
+        .min(5)
         .max(45)
         .required()
         .label('username'),

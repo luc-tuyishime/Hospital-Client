@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu } from "semantic-ui-react";
+import { Menu, Dropdown } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 export default class MenuBar extends Component {
@@ -22,15 +22,12 @@ export default class MenuBar extends Component {
 
 
                 <Menu.Menu position='right'>
-                    <Menu.Item
-                        name='signup'
-                        active={activeItem === 'signup'}
-                        onClick={this.handleItemClick}
-                        as={Link}
-                        to="/login-user"
-                    >
-                        Login User
-            </Menu.Item>
+                    <Dropdown text='Login' pointing className='link item'>
+                        <Dropdown.Menu>
+                            <Dropdown.Header><Link to="/login-hospital">Hospital</Link></Dropdown.Header>
+                            <Dropdown.Item><Link to="/login-user">User</Link></Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
                 </Menu.Menu>
             </Menu>
         )

@@ -11,4 +11,9 @@ module.exports = {
         message: '',
         errors: {}
     },
+    login: {
+        loading: false,
+        message: '',
+        errors: {}
+    }
 };

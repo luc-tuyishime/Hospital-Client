@@ -62,7 +62,7 @@ class RegisterHospital extends Component {
     };
 
     render() {
-        const { loading, isAuth } = this.props;
+        const { loading } = this.props;
         const { form, message, errors } = this.state;
         return (
             <>
@@ -105,9 +105,10 @@ class RegisterHospital extends Component {
                         <Button type="submit" primary loading={loading}>
                             Register
                     </Button>
-                        {isAuth && <div className="text-create-user">
-                            <Link to='/create-user'> Create User</Link>
-                        </div>}
+                        {message.includes('hospital created. Please login') &&
+                            <div className="text-create-user">
+                                <Link to='/login-hospital'> Login hospital</Link>
+                            </div>}
 
                     </Form>
                 </div>
@@ -125,9 +126,8 @@ RegisterHospital.propTypes = {
 };
 
 const mapStateToProps = ({
-    hospital: { isAuth, profile },
+    hospital: { profile },
     hospital: { signup: { loading, message, errors } } }) => ({
-        isAuth,
         profile,
         loading,
         message,

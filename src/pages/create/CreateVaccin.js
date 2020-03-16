@@ -79,9 +79,9 @@ class CreateVaccin extends Component {
                             </Message>
 
                         )}
-                    {(message || errors[0] || errors.token) ? (
-                        <Message color={(message && 'green') || (errors[0] && 'red') || (errors.token && 'red')}>
-                            {message || errors[0] || errors.token}
+                    {(message || errors.message || errors.token) ? (
+                        <Message color={(message && 'green') || (errors.message && 'red') || (errors.token && 'red')}>
+                            {message || errors.message || errors.token}
                         </Message>
                     ) : ''}
                     <Form onSubmit={this.handleSubmit}>

@@ -73,14 +73,15 @@ class CreateUser extends Component {
     render() {
         const { loading, isAuth } = this.props;
         const { form, message, errors } = this.state;
-        console.log('message', message);
+        const { 0: error } = errors;
+
         return (
             <>
                 <MenuBar />
                 <div className="form-container-inline">
-                    {(message || errors.message) && (
-                        <Message color={(message && 'green') || (errors.message && 'red')}>
-                            {message || errors.message}
+                    {(message || error) && (
+                        <Message color={(message && 'green') || (error && 'red')}>
+                            {message || error}
                         </Message>
                     )}
                     <Form onSubmit={this.handleSubmit}>
