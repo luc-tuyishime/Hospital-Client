@@ -20,7 +20,7 @@ function App({ isAuth }) {
             render={
               props => {
                 if (route.protected && !isAuth) {
-                  return <Redirect to="/login-user" />;
+                  return <Redirect to="/login-hospital" />;
                 }
                 document.title = route.name
                 return (

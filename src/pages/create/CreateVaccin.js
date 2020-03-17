@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import SemanticDatepicker from 'react-semantic-ui-datepickers';
-import MenuBar2 from '../../components/MenuBar2';
+import MenuBar from '../../components/MenuBar';
 
 import { create } from '../../actions/vaccin';
 import { validateHospital } from '../../helpers/validation';
@@ -65,7 +65,7 @@ class CreateVaccin extends Component {
         const { form, message, errors } = this.state;
         return (
             <>
-                <MenuBar2 />
+                <MenuBar />
                 <div className="form-container">
                     {!isAuth ? (
                         <Message negative>

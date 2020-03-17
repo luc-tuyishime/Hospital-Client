@@ -18,3 +18,8 @@
 .container {
     display: inline;
 }
+
+.username {
+    color: #2e7d32 !important;
+    margin-left: 8px;
+}

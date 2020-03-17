@@ -7,7 +7,7 @@ import SemanticDatepicker from 'react-semantic-ui-datepickers';
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-semantic-ui-datepickers/dist/react-semantic-ui-datepickers.css';
-import MenuBar2 from '../../components/MenuBar2';
+import MenuBar from '../../components/MenuBar';
 import { validateHospital } from '../../helpers/validation';
 import { create } from '../../actions/child/';
 
@@ -73,7 +73,7 @@ class CreateChild extends Component {
         const { form, message, errors } = this.state;
         return (
             <>
-                <MenuBar2 />
+                <MenuBar />
                 <div className="form-container-inline">
                     <ToastContainer position={toast.POSITION.TOP_CENTER} />
                     {isAuth &&

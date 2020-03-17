@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { create } from '../../actions/parent';
-import MenuBar2 from '../../components/MenuBar2';
+import MenuBar from '../../components/MenuBar';
 import { validateHospital } from '../../helpers/validation';
 import "../../styles/register.css";
 
@@ -63,7 +63,7 @@ class CreateParent extends Component {
         const { form, message, errors } = this.state;
         return (
             <>
-                <MenuBar2 />
+                <MenuBar />
                 <div className="form-container-inline">
                     {!isAuth ? (
                         <Message negative>
