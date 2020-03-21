@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import './App.css';
 import routes from './routes';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App({ isAuth }) {
   return (
@@ -35,6 +36,7 @@ function App({ isAuth }) {
           />
           )
         }
+        <Route path="*" exact component={NotFoundPage} />
       </Switch>
     </Router>
   );

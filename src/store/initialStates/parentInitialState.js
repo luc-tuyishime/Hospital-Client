@@ -1,6 +1,6 @@
 module.exports = {
+    listOfParents: [],
     fetchParents: {
-        parents: [],
         loading: false,
         message: '',
         errors: {}

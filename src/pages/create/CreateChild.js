@@ -76,13 +76,18 @@ class CreateChild extends Component {
                 <MenuBar />
                 <div className="form-container-inline">
                     <ToastContainer position={toast.POSITION.TOP_CENTER} />
-                    {isAuth &&
-                        <Message positive>
-                            <p>
-                                You are Adding Child as{''} <b>{profile.firstName}</b> <b>{profile.lastName}</b>
-                            </p>
+                    {errors.token ? (
+                        <Message negative>
+                            <p>You are not authenticated. please <Link to="/login-user">log in</Link></p>
                         </Message>
-                    }
+                    ) : (
+                            <Message positive>
+                                <p>
+                                    You are Adding Child as{''} <b>{profile.firstName}</b> <b>{profile.lastName}</b>
+                                </p>
+                            </Message>
+
+                        )}
                     <Form onSubmit={this.handleSubmit}>
                         <h1>Create Child</h1>
                         <Form.Group widths='equal'>

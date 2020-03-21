@@ -13,6 +13,7 @@ export default (state, { type, payload }) => {
                 login: { ...state.login, loading: false }
             };
         case hospitalActionsTypes.LOGIN_HOSPITAL_SUCCESS:
+            delete payload.hospital.password;
             localStorage.hospital = JSON.stringify(payload.hospital);
             localStorage.token = payload.token;
             return {

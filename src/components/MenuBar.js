@@ -49,13 +49,14 @@ class MenuBar extends Component {
                     {isAuth && (<Dropdown text='Parents' pointing className='link item'>
                         <Dropdown.Menu>
                             <Dropdown.Header><Link to="/create-parent">Create</Link></Dropdown.Header>
-                            <Dropdown.Item><Link to="/view-parent">View</Link></Dropdown.Item>
+                            <Dropdown.Item><Link to="/view-parents">View</Link></Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>)}
                     {isAuth && (<Dropdown text='Children' pointing className='link item'>
                         <Dropdown.Menu>
                             <Dropdown.Header><Link to="/create-child">Create</Link></Dropdown.Header>
                             <Dropdown.Item><Link to="/view-children">View</Link></Dropdown.Item>
+                            <Dropdown.Item><Link to="/vaccinated-children">Vaccinated</Link></Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>)}
                     {isAuth && (<Dropdown text='Vaccines' pointing className='link item'>

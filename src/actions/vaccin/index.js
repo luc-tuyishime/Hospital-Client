@@ -1,4 +1,5 @@
 import create from './create';
+import get from './get';
 
-export { create }
+export { create, get }
 
