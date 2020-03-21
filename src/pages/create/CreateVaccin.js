@@ -67,7 +67,7 @@ class CreateVaccin extends Component {
             <>
                 <MenuBar />
                 <div className="form-container">
-                    {!isAuth ? (
+                    {errors.token ? (
                         <Message negative>
                             <p>You are not authenticated. please <Link to="/login-user">log in</Link></p>
                         </Message>
@@ -79,9 +79,9 @@ class CreateVaccin extends Component {
                             </Message>
 
                         )}
-                    {(message || errors.message || errors.token) ? (
-                        <Message color={(message && 'green') || (errors.message && 'red') || (errors.token && 'red')}>
-                            {message || errors.message || errors.token}
+                    {(message || errors.message) ? (
+                        <Message color={(message && 'green') || (errors.message && 'red')}>
+                            {message || errors.message}
                         </Message>
                     ) : ''}
                     <Form onSubmit={this.handleSubmit}>

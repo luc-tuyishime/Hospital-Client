@@ -1,5 +1,5 @@
 module.exports = {
-    vaccins: [],
+    vaccines: [],
     getVaccins: {
         loading: false,
         errors: {},

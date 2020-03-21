@@ -14,6 +14,7 @@ export default (state, { type, payload }) => {
                 loginUser: { ...state.login, loading: false }
             };
         case userActionsTypes.LOGIN_USER_SUCCESS:
+            delete payload.user.password;
             localStorage.user = JSON.stringify(payload.user);
             localStorage.tokenUser = payload.token;
             return {

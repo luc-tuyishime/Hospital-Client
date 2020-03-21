@@ -59,13 +59,13 @@ class CreateParent extends Component {
 
 
     render() {
-        const { loading, isAuth, profile } = this.props;
+        const { loading, profile } = this.props;
         const { form, message, errors } = this.state;
         return (
             <>
                 <MenuBar />
                 <div className="form-container-inline">
-                    {!isAuth ? (
+                    {errors.token ? (
                         <Message negative>
                             <p>You are not authenticated. please <Link to="/login-user">log in</Link></p>
                         </Message>
@@ -77,9 +77,9 @@ class CreateParent extends Component {
                             </Message>
 
                         )}
-                    {(message || errors.message || errors.token) ? (
-                        <Message color={(message && 'green') || (errors.message && 'red') || (errors.token && 'red')}>
-                            {message || errors.message || errors.token}
+                    {(message || errors.message) ? (
+                        <Message color={(message && 'green') || (errors.message && 'red')}>
+                            {message || errors.message}
                         </Message>
                     ) : ''}
                     <Form onSubmit={this.handleSubmit}>

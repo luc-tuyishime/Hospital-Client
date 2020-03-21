@@ -23,3 +23,16 @@
     color: #2e7d32 !important;
     margin-left: 8px;
 }
+
+.center-text {
+    text-align: center;
+}
+
+.not-found-page {
+    padding-top: 40px;
+}
+
+.children-text {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

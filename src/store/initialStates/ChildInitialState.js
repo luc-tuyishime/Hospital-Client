@@ -1,6 +1,13 @@
 module.exports = {
+    listOfChildren: [],
+    vaccinatedChildren: [],
     fetchChildren: {
         children: [],
+        loading: false,
+        message: '',
+        errors: {}
+    },
+    getVaccinated: {
         loading: false,
         message: '',
         errors: {}
@@ -10,4 +17,4 @@ module.exports = {
         message: '',
         errors: {}
     },
-};
+}; 
