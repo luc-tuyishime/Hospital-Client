@@ -40,3 +40,8 @@
 .center-pagination {
     text-align: center;
 }
+
+.forgot-password-text {
+    float: right;
+    margin-top: 8px;
+}

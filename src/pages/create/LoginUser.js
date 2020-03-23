@@ -92,6 +92,7 @@ class LoginUser extends Component {
                         <Button type="submit" primary loading={loading}>
                             Login
                     </Button>
+                        <span className="forgot-password-text"><Link to='/forgot-password'>Forgot password</Link></span>
                         <p>Don't have an account ?<Link to='/create-user'> Create User</Link>
                         </p>
                     </Form>

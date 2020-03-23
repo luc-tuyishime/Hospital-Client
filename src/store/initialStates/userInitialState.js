@@ -20,5 +20,15 @@ module.exports = {
         loading: false,
         message: '',
         errors: {}
+    },
+    forgotPassword: {
+        loading: false,
+        message: '',
+        errors: {}
+    },
+    resetPassword: {
+        loading: false,
+        message: '',
+        errors: {}
     }
 };

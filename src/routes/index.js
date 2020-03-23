@@ -9,9 +9,12 @@ import ViewParents from './ViewParents';
 import ViewChildren from './ViewChildren';
 import ViewVaccines from './ViewVaccines';
 import ViewVaccinatedChildren from './ViewVaccinatedChildren';
+import ForgotPassword from './ForgotPassword';
+import ResetPassword from './ResetPassword';
 
 export default [registerHospital, CreateUser,
     LoginUser, CreateParent, CreateVaccin,
     CreateChild, LoginHospital, ViewParents, ViewChildren,
-    ViewVaccines, ViewVaccinatedChildren
+    ViewVaccines, ViewVaccinatedChildren, ForgotPassword,
+    ResetPassword
 ]
