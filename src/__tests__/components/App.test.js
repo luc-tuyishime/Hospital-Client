@@ -14,7 +14,6 @@ describe('<App />', () => {
                 <App />
             </MemoryRouter>
         </Provider>);
-
         expect(component).toHaveLength(1);
     });
 });
