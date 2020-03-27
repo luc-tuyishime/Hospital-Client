@@ -19,7 +19,6 @@ class ViewParents extends Component {
     }
 
     componentDidMount = () => {
-        console.log(this.props);
         const { get } = this.props;
         get();
     };

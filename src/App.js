@@ -7,6 +7,7 @@ import './App.css';
 import routes from './routes';
 import NotFoundPage from './pages/NotFoundPage';
 
+
 function App({ isAuth }) {
   return (
     <Router>
@@ -20,9 +21,8 @@ function App({ isAuth }) {
             role={route.role}
             render={
               props => {
-                if (route.protected && !isAuth) {
-                  return <Redirect to="/login-hospital" />;
-                }
+                if (route.protected && !isAuth) return <Redirect to="/login-hospital" />
+                if (!route.protected && isAuth) return <Redirect to="create-parent" />
                 document.title = route.name
                 return (
                   <route.component
