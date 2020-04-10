@@ -52,7 +52,7 @@ class ViewParents extends Component {
                     <Header.Content>Parents</Header.Content>
                 </Header>
                 <Container>
-                    {parents.length ?
+                    {parents.length > 0 ?
                         <>
                             <Table singleLine>
                                 <Table.Header>

@@ -22,7 +22,6 @@ function App({ isAuth }) {
             render={
               props => {
                 if (route.protected && !isAuth) return <Redirect to="/login-hospital" />
-                if (!route.protected && isAuth) return <Redirect to="create-parent" />
                 document.title = route.name
                 return (
                   <route.component
