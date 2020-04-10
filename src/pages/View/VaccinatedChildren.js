@@ -52,7 +52,7 @@ class VaccinatedChildren extends Component {
                     <Header.Content className="children-text">Vaccinated Children</Header.Content>
                 </Header>
                 <Container>
-                    {vaccinatedChildren.length ?
+                    {vaccinatedChildren.length > 0 ?
                         <>
                             <Table singleLine>
                                 <Table.Header>

@@ -53,7 +53,7 @@ class ViewChildren extends Component {
                     <Header.Content className="children-text">Children with Parents associated</Header.Content>
                 </Header>
                 <Container>
-                    {children ?
+                    {children.length > 0 ?
                         <>
                             <Table celled structured>
                                 <Table.Header>

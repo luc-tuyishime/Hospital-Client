@@ -23,6 +23,7 @@ class MenuBar extends Component {
     render() {
         const { activeItem } = this.state
         const { isAuth, firstName, lastName } = this.props;
+        console.log('check ===>>', isAuth);
         return (
             <Menu icon size='large'>
                 <Menu.Item

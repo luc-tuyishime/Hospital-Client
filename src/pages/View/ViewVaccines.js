@@ -52,7 +52,7 @@ class ViewVaccines extends Component {
                     <Header.Content className="children-text">Vaccines</Header.Content>
                 </Header>
                 <Container>
-                    {vaccines.length ?
+                    {vaccines.length > 0 ?
                         <>
                             <Table singleLine>
                                 <Table.Header>
